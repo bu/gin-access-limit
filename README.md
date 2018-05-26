@@ -1,7 +1,7 @@
 # Gin Access Limit Middleware
 
-![Go Report Card](https://goreportcard.com/badge/github.com/bu/gin-access-limit)
-![Build Status](https://travis-ci.org/bu/gin-access-limit.svg?branch=master)](https://travis-ci.org/bu/gin-access-limit)
+[![Go Report Card](https://goreportcard.com/badge/github.com/bu/gin-access-limit)](https://goreportcard.com/report/github.com/bu/gin-access-limit)
+[![Build Status](https://travis-ci.org/bu/gin-access-limit.svg?branch=master)](https://travis-ci.org/bu/gin-access-limit)
 
 A [Gin web framework](https://github.com/gin-gonic/gin) middleware for IP access control by specifying CIDR notations.
 
