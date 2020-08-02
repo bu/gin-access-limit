@@ -2,8 +2,9 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/bu/gin-access-limit)](https://goreportcard.com/report/github.com/bu/gin-access-limit)
 [![Build Status](https://travis-ci.org/bu/gin-access-limit.svg?branch=master)](https://travis-ci.org/bu/gin-access-limit)
+[![Documentation](https://godoc.org/github.com/bu/gin-access-limit?status.svg)](http://godoc.org/github.com/bu/gin-access-limit)
 
-A [Gin web framework](https://github.com/gin-gonic/gin) middleware for IP access control by specifying CIDR notations.
+A [Gin web framework](https://github.com/gin-gonic/gin) middleware for IP restriction by specifying CIDR notations.
 
 ## Usage
 
@@ -22,6 +23,9 @@ func main() {
 
     // this API is only accessible from Docker containers
     r.Use(limit.CIDR("172.18.0.0/16"))
+
+	// if need to specify serveral range of allowed sources, use comma to concatenate them
+    // r.Use(limit.CIDR("172.18.0.0/16, 127.0.0.1/32"))
 
     // routes
     r.GET("/", func (c *gin.Context) {

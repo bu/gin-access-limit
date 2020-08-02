@@ -16,8 +16,9 @@ var DisableLogging bool
 // need to avoid use common forgry-able header fields.
 var TrustedHeaderField string
 
-// CIDR is a middelware that check given CIDR rules and return 403 Forbidden
-// when user is not coming from allowed source.
+// CIDR is a middleware that check given CIDR rules and return 403 Forbidden
+// when user is not coming from allowed source. CIDRs accepts a list of CIDRs,
+// separated by comma. (e.g. 127.0.0.1/32, ::1/128 )
 func CIDR(CIDRs string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// retreieve user's connection origin from request remote addr
