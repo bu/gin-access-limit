@@ -24,7 +24,7 @@ func main() {
     // this API is only accessible from Docker containers
     r.Use(limit.CIDR("172.18.0.0/16"))
 
-	// if need to specify serveral range of allowed sources, use comma to concatenate them
+    // if need to specify serveral range of allowed sources, use comma to concatenate them
     // r.Use(limit.CIDR("172.18.0.0/16, 127.0.0.1/32"))
 
     // routes
