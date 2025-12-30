@@ -69,7 +69,7 @@ func CIDR(CIDRs string) gin.HandlerFunc {
 		// if no CIDR ranges contains our IP
 		if matchCount == 0 {
 			if DisableLogging == false {
-				log.Printf("[LIMIT] Request from [" + remoteAddr + "] is not allow to access `" + c.Request.RequestURI + "`, only allow from: [" + CIDRs + "]")
+				log.Printf("[LIMIT] Request from [%s] is not allow to access `%s`, only allow from: [%s]", remoteAddr, c.Request.RequestURI, CIDRs)
 			}
 
 			c.AbortWithStatus(403)
